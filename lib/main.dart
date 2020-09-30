@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:tapping/main_model.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -32,43 +36,41 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
 
-  void _incrementCounter() {
-    setState(() {
 
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
 
-    return Scaffold(
-      appBar: AppBar(
+    return ChangeNotifierProvider<MainModel>(
+      create: (_) => MainModel(),
+      child: Scaffold(
+        appBar: AppBar(
 
-        title: Text('ナマコさん'),
-      ),
-      body: Center(
-
-        child: Column(
-
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+          title: Text('ナマコさん'),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
+        body: Consumer<MainModel>(builder: (context, model, child) {
+            return Center(
+              child: Column(
+                children: [
+                  Text(
+                      model.kboyText,
+                    style: TextStyle(
+                      fontSize: 60,
+                    ),
+                  ),
+                  RaisedButton(
+                    child: Text('石川先生'),
+                    onPressed: (){
+                      model.changeKboyText();
+                    },
+                  ),
+                ],
+              ),
+            );
+          }
+        ),
+
       ),
     );
   }
