@@ -20,16 +20,16 @@ class MyApp extends StatelessWidget {
 
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage() : super();
 
 
-  final String title;
+
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -46,8 +46,12 @@ class _MyHomePageState extends State<MyHomePage> {
       create: (_) => MainModel(),
       child: Scaffold(
         appBar: AppBar(
-
-          title: Text('ナマコさん'),
+          title: Row(
+            children: [
+              Icon(Icons.ac_unit),
+              Text('石川先生へ'),
+            ],
+          ),
         ),
         body: Consumer<MainModel>(builder: (context, model, child) {
             return Center(

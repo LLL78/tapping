@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "411502768672",
+    "firebase_url": "https://fir-c7173.firebaseio.com",
+    "project_id": "fir-c7173",
+    "storage_bucket": "fir-c7173.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411502768672:android:39fa2376eab6bd99f2c245",
+        "android_client_info": {
+          "package_name": "com.example.tapping"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411502768672-ij575gjevvjsftujnof841oq0mdg4o0g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1njDWfyhryEkXqIseLTgoPxfafOrIDzs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411502768672-ij575gjevvjsftujnof841oq0mdg4o0g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
